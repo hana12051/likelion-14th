@@ -7,31 +7,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <link rel="icon" href="./assets/images/ecmascript-logo.png" />
-  
+    <!-- <script src="./assets/scripts/utils/css.js"></script>
+    <script src="./assets/scripts/utils/events.js"></script>
+    <script src="./assets/scripts/utils/query.js"></script>
+    <script src="./assets/scripts/utils/attr.js"></script> -->
   </head>
 
   <body>
+ <h1 id="static">JavaScript</h1>
 
-    <h1>JavaScript</h1>Add commentMore actions
+ <ul class="faq-list">
+  <li><a href="/faq/shipping">배송 관련 문의</a></li>
+  <li><a href="/faq/payment">결제 방법 안내</a></li>
+  <li><a href="/faq/return">반품 및 환불 정책</a></li>
+  <li><a href="/faq/account">계정 및 개인정보</a></li>
+  <li><a href="/faq/coupon">쿠폰 및 프로모션</a></li>
+</ul>
+  
+ <h2 hidden>스타워즈</h2>
+
+  <div hidden id="star-wars">
+  <div class="character" data-type="good-guy">
+    <span>루크</span> <span>스카이워커</span>
+  </div>
+  <div class="character" data-type="good-guy">
+    <b>요</b>
+    <i>다</i>
+  </div>
+  <div class="character" data-type="villain">
+    <em>다스</em> <strong>베이더</strong>
+  </div>
+</div>
 
     <section hidden class="life-tips">
       <h2>생활 상식</h2>
-      <p>배터리를 오래 쓰고 싶다면 100% 충전보다는 80~90%에서 사용을 멈추는 것이 좋습니다.</p>
-      <p>전자레인지에 금속 용기를 넣으면 화재 위험이 있으니 절대 사용하지 마세요.</p>
-      <p>흰 셔츠의 얼룩은 세탁 전에 식초나 베이킹소다로 미리 처리하면 잘 지워집니다.</p>
+      <p class="para">배터리를 오래 쓰고 싶다면 100% 충전보다는 80~90%에서 사용을 멈추는 것이 좋습니다.</p>
+      <p class="para">전자레인지에 금속 용기를 넣으면 화재 위험이 있으니 절대 사용하지 마세요.</p>
+      <p class="para">흰 셔츠의 얼룩은 세탁 전에 식초나 베이킹소다로 미리 처리하면 잘 지워집니다.</p>
     </section>
 
-    <div hidden id="star-wars">
-  <div class="character" data-type="good-guy">루크 스카이워커</div>
-  <div class="character" data-type="good-guy">요다</div>
-  <div class="character" data-type="villain">다스 베이더</div>
-</div>
+    <p 
+      id="notice"
+      class="announcement"
+      data-category="event"
+      data-user-id="27" 
+      data-role="manager" 
+      data-status="active"
+      >
+      모든 태그는 여러 개의 속성을 가질 수 있습니다!
+    </p>
 
-<ui>
-  <li><a href="./assets/pages/pages.html">노드와 요소 실습</a></li>
-</ui>
+    <form hidden>
+      <div>
+        <!-- HTML attribute -->
+        <input type="checkbox" name="hobby" id="hobby" checked />
+        <label for="hobby">취미</label>
+      </div>
+      <button type="submit">제출</button>
+    </form>
 
-    <script src="./assets/scripts/learn/35-select-multiple-element.js"></script>
+    <ul>
+      <li><a href="./assets/pages/06-element-rect-info/practice-01.html">실습1</a></li>
+      <li><a href="./practices/05-carousel/index.html">캐랄셀연습</a></li>
+    </ul>
+
+    <script src="./assets/scripts/learn/43-dom-traversing.js"></script>
   </body>
 
 </html>

@@ -1,0 +1,123 @@
+/* =========  ROOT TOKENS  ========= */
+:root {
+  --primary-bg: #ffecef;          /* 페이지 전체 연분홍 */
+  --card-bg: #ead1e2cc;           /* 아코디언 아이템 반투명 배경 */
+  --text-color: var(--black);     /* 사용자 팔레트 활용 */
+  --brand-font-size: 1.125rem;    /* 18 px */
+  --title-font-size: 1.5rem;      /* 24 px */
+  --radius: .75rem;               /* 12 px */
+  --transition: .25s ease;
+}
+
+/* =========  LAYOUT  ========= */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: var(--text-color);
+  background-color: #ffffff; /* ✅ 흰색 배경 */
+}
+
+/* ----- 헤더 ----- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  background-color: var(--white);
+  position: sticky;
+  inset-block-start: 0;
+}
+
+.brand {
+  margin: 0;
+  font-size: var(--brand-font-size);
+}
+
+.menu-button {
+  border: 0;
+  background: none;
+  inline-size: 2rem;
+  block-size: 2rem;
+  cursor: pointer;
+}
+
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after {
+  display: block;
+  inline-size: 100%;
+  block-size: .1875rem;           /* 3 px */
+  background-color: var(--black);
+  border-radius: 9999px;
+  position: relative;
+}
+.menu-icon::before,
+.menu-icon::after {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+}
+.menu-icon::before { inset-block-start: -.5rem; }
+.menu-icon::after  { inset-block-start:  .5rem; }
+
+/* ----- FAQ 타이틀 ----- */
+.faq-section { padding: 1.5rem 1rem; }
+.faq-title {
+  font-size: var(--title-font-size);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-block: 0 1.5rem;
+}
+.faq-title-icon { inline-size: 1.5rem; }
+
+/* ----- 아코디언 ----- */
+.accordion-item + .accordion-item { margin-block-start: 1.5rem; }
+
+.accordion-header {
+  inline-size: 100%;
+  padding: 1.125rem;
+  background: var(--card-bg);
+  border: 0;
+  border-radius: var(--radius);
+  font: inherit;
+  text-align: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion-icon {
+  flex: 0 0 auto;
+  inline-size: 1rem;
+  block-size: 1rem;
+  background-image: url('chevron-down.svg'); /* ▼ 아이콘 */
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(0);
+  transition: transform var(--transition);
+}
+
+.accordion-content {
+  max-block-size: 0;
+  overflow: hidden;
+  background: var(--card-bg);
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding-inline: 1.125rem;
+  transition: max-block-size var(--transition);
+}
+
+/* ----- 열린 상태 ----- */
+.accordion-item.open .accordion-icon { transform: rotate(180deg); }
+.accordion-item.open .accordion-content { max-block-size: 20rem; } /* 넉넉하게 */
+
+.accordion-content p { margin-block: 1rem; }
+
+/* =========  DESKTOP (예: ≥64 rem)  ========= */
+@media (min-width: 64rem) {
+  body { font-size: 1rem; } /* 16 px */
+  .faq-section { padding-inline: 2rem; max-inline-size: 40rem; margin: 0 auto; }
+}

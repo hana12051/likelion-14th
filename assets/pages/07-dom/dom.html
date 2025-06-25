@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM 탐색(Traversal)</title>
+</head>
+<body>
+
+  <section class="card">
+    <h2 class="card__title">상품 정보</h2>
+    <div class="card__desc">
+      <p>이 제품은 <b>매우 유용</b>합니다.</p>
+      <p>이 제품은 <b>리미티드 에디션</b>합니다.</p>
+    </div>
+  </section>
+
+ <script>
+  {
+    const card = document.querySelector('.card');               // <section>
+
+    // 1. `.card` 요소의 모든 자식 요소
+    //    → HTMLCollection (실시간 컬렉션) 이라 배열 메서드가 바로 안 먹혀요.
+    const children = card.children;
+    console.log('1️⃣ .card.children →', children);
+
+    // 2. `.card` 요소의 첫 번째 자식 요소
+    //    없으면 null을 반환합니다.
+    const firstChild = card.firstElementChild;
+    console.log('2️⃣ .card.firstElementChild →', firstChild);
+
+    // 3. `.card` 요소의 마지막 자식 요소
+    const lastChild = card.lastElementChild;
+    console.log('3️⃣ .card.lastElementChild →', lastChild);
+
+    // 4. `.card__desc` 내부의 모든 <p> 요소
+    //    NodeList(고정 스냅샷) 가 반환됩니다.
+    const paragraphs = card.querySelectorAll('.card__desc > p');
+    console.log('4️⃣ .card__desc > p →', paragraphs);
+
+    /* 추가 팁 -----------------------------------------------------------
+       - children ↔ childNodes 차이
+         · children       : 요소(ELEMENT_NODE)만 모음
+         · childNodes     : 요소 + 텍스트 노드(줄바꿈·공백) 등 모두 포함
+       - firstElementChild / lastElementChild
+         · 요소가 없으면 null (그래서 읽기 전에 null 체크 권장)
+       - HTMLCollection → 배열 변환
+         const arr = Array.from(children) 또는 [...children]
+    --------------------------------------------------------------------- */
+  }
+</script>
+
+  <article hidden class="modal">
+    <head class="modal__head">
+      <!-- ... -->
+    </head>
+    <div class="modal__content">
+      <!-- ... -->
+    </div>
+    <footer class="modal__foot">
+      <button type="button" class="modal__close">닫기</button>
+    </footer>
+  </article>
+
+  <script>
+  {
+    const closeButton = document.querySelector('.modal__close');
+
+    // 1. closeButton의 부모 요소 출력 → .modal__foot
+    const parent = closeButton.parentElement;
+    console.log('1️⃣ 부모 요소:', parent);
+
+    // 2. closeButton의 상위 요소 중 `.modal` 찾기
+    const modal = closeButton.closest('.modal');
+    console.log('2️⃣ .modal 상위 요소:', modal);
+
+    /*  참고 팁
+       - parentElement : 바로 위의 요소 노드를 반환 (없으면 null)
+       - closest(selector) : 가장 가까운 상위 요소 중 주어진 선택자에 일치하는 요소를 반환
+                             자신도 포함해 검사함
+    */
+  }
+</script>
+
+  <ul hidden class="menu">
+    <li>홈</li>
+    <li>서비스</li>
+    <li>포트폴리오</li>
+    <li class="active">블로그</li>
+    <li>연락처</li>
+  </ul>
+
+ <script>
+  {
+    const activeItem = document.querySelector('.active');
+
+    // 1. 이전 형제 요소 (.previousElementSibling 사용)
+    const prevSibling = activeItem.previousElementSibling;
+    console.log('1️⃣ 이전 형제 요소:', prevSibling);
+
+    // 2. 다음 형제 요소 (.nextElementSibling 사용)
+    const nextSibling = activeItem.nextElementSibling;
+    console.log('2️⃣ 다음 형제 요소:', nextSibling);
+
+    // 3. "서비스" 콘텐츠를 가진 형제 요소 찾기
+    const siblings = activeItem.parentElement.children;
+    const serviceItem = Array.from(siblings).find(
+      li => li.textContent.trim() === '서비스'
+    );
+    console.log('3️⃣ "서비스" 항목:', serviceItem);
+
+    /*  참고
+       - previousElementSibling / nextElementSibling: 요소 기준으로 이전/다음 형제 요소
+       - children은 HTMLCollection이라 Array.from 또는 [...children]으로 배열화 가능
+       - textContent는 요소 안의 텍스트 전체 추출
+    */
+  }
+</script>
+
+</body>
+</html>

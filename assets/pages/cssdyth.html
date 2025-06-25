@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <title>스타일 변경 예제</title>
+  <style>
+    .box {
+      padding: 20px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+      transition: all 0.3s ease;
+      color: black;
+      background-color: white;
+      width: auto;
+      height: auto;
+    }
+
+    .box.active {
+      color: white;
+      background-color: tomato;
+      width: 300px;
+      height: 150px;
+    }
+  </style>
+</head>
+<body>
+
+  <p class="box">이 텍스트의 스타일이 바뀔 거예요!</p>
+  <button type="button" class="change-style-button">스타일 변경</button>
+
+  <script>
+    const box = document.querySelector('.box');
+    const button = document.querySelector('.change-style-button');
+
+    button.addEventListener('click', () => {
+      box.classList.toggle('active'); // ✅ active 클래스를 토글
+    });
+  </script>
+
+</body>
+</html>

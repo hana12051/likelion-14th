@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+	<head>
+	  <meta charset="UTF-8" />
+	  <title>속성 설정, 읽기, 제거 실습</title>
+	  <style>
+	    .product {
+	      border: 1px solid #ccc;
+	      padding: 1rem;
+	      margin-bottom: 1rem;
+	      font-size: 1rem;
+	    }
+	
+	    .button {
+	      margin-right: 0.5rem;
+	    }
+	  </style>
+	</head>
+	<body>
+	
+	  <div class="product" data-name="Red Sneakers" data-stock="3">
+	    🛍️ 제품: <span class="name">레드 스니커스</span><br />
+	    📦 재고: <span class="stock">3</span>
+	  </div>
+	
+	  <button type="button" class="button" id="read">속성 읽기</button>
+	  <button type="button" class="button" id="update">재고 수정</button>
+	  <button type="button" class="button" id="remove">속성 제거</button>
+	
+    <script>
+  const productElement = document.querySelector('.product')
+  const readBtn   = document.getElementById('read')
+  const updateBtn = document.getElementById('update')
+  const removeBtn = document.getElementById('remove')
+
+  /* 1. getAttribute로 읽기 */
+  readBtn.addEventListener('click', () => {
+    console.group('getAttribute')
+    const nameAttr  = productElement.getAttribute('data-name')
+    const stockAttr = productElement.getAttribute('data-stock')
+    console.log('데이터 이름 =', nameAttr,  '타입 =', typeof nameAttr)
+    console.log('데이터 재고 =', stockAttr, '타입 =', typeof stockAttr)
+    console.groupEnd()
+  });
+
+  /* 2. dataset으로 읽기 */
+  readBtn.addEventListener('click', () => {
+    console.group('dataset')
+    const nameData  = productElement.dataset.name
+    const stockData = productElement.dataset.stock
+    console.log('데이터 이름 =', nameData,  '타입 =', typeof nameData)
+    console.log('데이터 재고 =', stockData, '타입 =', typeof stockData)
+    console.groupEnd()
+  });
+
+  /* 3. 재고 +2 로 수정 */
+  updateBtn.addEventListener('click', () => {
+    const current   = Number(productElement.dataset.stock)
+    const newStock  = current + 2
+    productElement.dataset.stock = newStock
+
+    const stockSpan = productElement.querySelector('.stock')
+    stockSpan.textContent = newStock
+  });
+
+  /* 4. data-stock 제거 */
+  removeBtn.addEventListener('click', () => {
+    productElement.removeAttribute('data-stock')
+    productElement.querySelector('.stock').textContent = '없음'
+  });
+</script>
+</body>
+</html>
