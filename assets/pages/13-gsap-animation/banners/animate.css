@@ -86,11 +86,11 @@ body {
   top: 80px;
 
   /* ✅ 추가 */
-  overflow: visible;
+  /* overflow: visible; */
 
-  svg {
-    overflow: visible; /* ✅ 핵심 추가 */
-  }
+  /* svg {
+    overflow: visible; 
+  } */
 
   .st0 { fill: #fff7d9; }
   .st1 { fill: #ffc400; }
