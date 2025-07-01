@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko-KR">
 
@@ -14,30 +15,41 @@
   </head>
 
   <body>
- <h1 id="static">JavaScript</h1>
+    
+    <h1 id="static">JavaScript</h1>
 
- <ul class="faq-list">
-  <li><a href="/faq/shipping">배송 관련 문의</a></li>
-  <li><a href="/faq/payment">결제 방법 안내</a></li>
-  <li><a href="/faq/return">반품 및 환불 정책</a></li>
-  <li><a href="/faq/account">계정 및 개인정보</a></li>
-  <li><a href="/faq/coupon">쿠폰 및 프로모션</a></li>
-</ul>
-  
- <h2 hidden>스타워즈</h2>
+    <ul hidden class="faq-list">
+      <li data-index="0"><a href="/faq/shipping">배송 관련 문의</a></li>
+      <li data-index="1"><a href="/faq/payment">결제 방법 안내</a></li>
+      <li data-index="2"><a href="/faq/return">반품 및 환불 정책</a></li>
+      <li data-index="3"><a href="/faq/account">계정 및 개인정보</a></li>
+      <li data-index="4"><a href="/faq/coupon">쿠폰 및 프로모션</a></li>
+    </ul>
 
-  <div hidden id="star-wars">
-  <div class="character" data-type="good-guy">
-    <span>루크</span> <span>스카이워커</span>
-  </div>
-  <div class="character" data-type="good-guy">
-    <b>요</b>
-    <i>다</i>
-  </div>
-  <div class="character" data-type="villain">
-    <em>다스</em> <strong>베이더</strong>
-  </div>
-</div>
+    <article hidden>
+      <h2>스타 워즈</h2>
+      <div id="star-wars">
+        <!-- 1 -->
+        <!-- 2 -->
+        <!-- 3 -->
+        <!-- 4 -->
+        <div class="character" data-type="good-guy">
+          <span>루크</span> <span>스카이워커</span>
+        </div>
+        <div class="character" data-type="good-guy">
+          <b>요</b>
+          <i>다</i>
+        </div>
+        <div class="character" data-type="villain">
+          <span class="parent">
+            <em>
+              <span class="me">다스</span>
+            </em> 
+          </span>
+          <strong>베이더</strong>
+        </div>
+      </div>
+    </article>
 
     <section hidden class="life-tips">
       <h2>생활 상식</h2>
@@ -47,6 +59,7 @@
     </section>
 
     <p 
+      hidden
       id="notice"
       class="announcement"
       data-category="event"
@@ -66,12 +79,88 @@
       <button type="submit">제출</button>
     </form>
 
-    <ul>
-      <li><a href="./assets/pages/06-element-rect-info/practice-01.html">실습1</a></li>
-      <li><a href="./practices/05-carousel/index.html">캐랄셀연습</a></li>
-    </ul>
+    <button hidden type="button" data-name="change-bg-color">배경색 변경</button>
 
-    <script src="./assets/scripts/learn/43-dom-traversing.js"></script>
+    <a hidden href="https://naver.com" target="_blank" rel="noopener noreferrer">
+      네이버
+    </a>
+
+    <hr />
+    
+    <label hidden for="agreement">
+      <input type="checkbox" name="agreement" id="agreement" />
+      동의합니다.
+    </label>
+
+    <hr />
+
+    <form hidden data-learn="form" method="GET" action="https://google.com">
+  <!-- 검색 필드 -->
+  <div hidden>
+    <label hidden for="search-term">검색어</label>
+    <input hidden type="search" name="search-term" id="search-term" placeholder="검색어를 입력" />
+  </div>
+  <button hidden type="submit">검색</button>
+  <button hidden type="reset">초기화</button>
+</form>
+
+<div  hidden class="box box1">
+  <span>박스 1</span>
+  <div class="box box2">
+    <span>박스 2</span>
+    <div class="box box3">
+      <span>박스 3</span>
+    </div>
+  </div>
+</div>
+
+<div hidden role="group" style="display: flex; gap: 4px; margin-block: 12px;">
+  <button type="button" data-role="add-event">이벤트 추가</button>
+  <button type="button" data-role="remove-event">이벤트 제거</button>
+  <button data-role="tester" type="button">이벤트 추가 대기중...</button>
+  <button type="button" data-role="once-event">1회만 이벤트 설정</button>
+</div>
+
+
+<ul hidden class="link-list">
+  <li>
+    <a href="/news">
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        width="24" height="24" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke="currentColor" 
+        stroke-width="2" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+      >
+        <path d="M15 18h-5"/>
+        <path d="M18 14h-8"/>
+        <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"/>
+        <rect width="8" height="4" x="10" y="6" rx="1"/>
+      </svg>
+      최신 뉴스 보기
+    </a>
+  </li>
+  <li><a href="/tutorials">📘 튜토리얼 모음</a></li>
+  <li><a href="/community">💬 커뮤니티 참여</a></li>
+  <li><a href="/resources">📁 개발 자료실</a></li>
+  <li><a href="/contact">📮 문의하기</a></li>
+</ul>
+
+<ul>
+  <li><a href="./assets/pages/09-event-propagation/practice-01.html">연습</a></li>
+    <li><a href="./assets/pages/10-cade/practice-023.html">연습</a></li>
+  <li><a href="./assets/pages/11-event-unlistening/practice.html">연습</a></li>
+  <li><a href="./practices/06-modal-dialog-close/index.html">연습2</a></li>
+  <li><a href="./assets/pages/12-web-animation/practice.html">연습2</a></li>
+  <li><a href="./assets/pages/13-gsap-animation/practice-01.html">연습2</a></li>
+  <li><a href="./assets/pages/13-gsap-animation/practice-02.html">연습2</a></li>
+</ul>
+
+<div class="ball"></div>
+
+    <script src="./assets/scripts/learn/49-web-animations.js"></script>
   </body>
-
 </html>

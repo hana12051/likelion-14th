@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <title>이벤트 제거 실습</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+    }
+
+    button {
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>이벤트 제거 실습</h1>
+  <button id="test-button">👆 클릭 테스트 버튼</button>
+  <button id="add-handler">✅ 이벤트 추가</button>
+  <button id="remove-handler">❌ 이벤트 제거</button>
+
+  <script>
+    // 핸들러를 변수로 따로 저장 (이게 핵심!)
+    function handleClick() {
+      console.log('🟢 버튼이 클릭되었습니다!');
+    }
+
+    const testButton = document.getElementById('test-button');
+    const addButton = document.getElementById('add-handler');
+    const removeButton = document.getElementById('remove-handler');
+
+    // 이벤트 추가
+    addButton.addEventListener('click', () => {
+      testButton.addEventListener('click', handleClick);
+      console.log('✅ 이벤트가 추가되었습니다.');
+    });
+
+    // 이벤트 제거
+    removeButton.addEventListener('click', () => {
+      testButton.removeEventListener('click', handleClick);
+      console.log('❌ 이벤트가 제거되었습니다.');
+    });
+  </script>
+</body>
+</html>
