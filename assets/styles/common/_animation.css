@@ -1,0 +1,4 @@
+@keyframes rising-up {
+  0% { translate: 0 60px; opacity: 0; }
+  100% { translate: 0 0; opacity: 1; }
+}

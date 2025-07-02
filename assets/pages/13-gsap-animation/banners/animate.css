@@ -85,12 +85,12 @@ body {
   left: 364px;
   top: 80px;
 
-  /* ✅ 추가 */
-  /* overflow: visible; */
+  /*✅ 추가 */
+   overflow: visible; 
 
-  /* svg {
+   svg {
     overflow: visible; 
-  } */
+  }
 
   .st0 { fill: #fff7d9; }
   .st1 { fill: #ffc400; }

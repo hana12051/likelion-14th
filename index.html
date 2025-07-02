@@ -17,6 +17,25 @@
   <body>
     
     <h1 id="static">JavaScript</h1>
+    
+     <div class="practice1" style="display: flex; flex-direction: column; gap: 20px;">
+  <form>
+    <div>
+      <label for="username">이름</label>
+      <input id="username" name="username" placeholder="이름을 입력하세요" />
+    </div>
+    <button type="submit">확인</button>
+  </form>
+  <output>결과 출력</output>
+</div>
+
+
+<div class="practice2" style="display: flex; flex-direction: column; gap: 20px;">
+  <input type="number" aria-label="점수" placeholder="점수를 입력하세요" />
+  <button type="button">등급 확인</button>
+  <output>등급 출력</output>
+</div>
+  
 
     <ul hidden class="faq-list">
       <li data-index="0"><a href="/faq/shipping">배송 관련 문의</a></li>
@@ -149,18 +168,39 @@
   <li><a href="/contact">📮 문의하기</a></li>
 </ul>
 
+<div class="practice">
+  <form>
+    <div>
+      <label for="username">이름</label>
+      <input id="username" type="text" placeholder="이름을 입력하세요." />
+    </div>
+    <div>
+      <label for="meal">식사</label>
+      <select id="meal">
+        <option>식사 종류</option>
+        <option value="breakfast">아침</option>
+        <option value="lunch">점심</option>
+        <option value="dinner">저녁</option>
+      </select>
+    </div>
+    <button type="button">인사하기</button>
+  </form>
+  <p>인사말 출력</p>
+</div>
+
 <ul>
-  <li><a href="./assets/pages/09-event-propagation/practice-01.html">연습</a></li>
-    <li><a href="./assets/pages/10-cade/practice-023.html">연습</a></li>
-  <li><a href="./assets/pages/11-event-unlistening/practice.html">연습</a></li>
-  <li><a href="./practices/06-modal-dialog-close/index.html">연습2</a></li>
-  <li><a href="./assets/pages/12-web-animation/practice.html">연습2</a></li>
   <li><a href="./assets/pages/13-gsap-animation/practice-01.html">연습2</a></li>
   <li><a href="./assets/pages/13-gsap-animation/practice-02.html">연습2</a></li>
+   <li><a href="./practices/10-off-canvas-animation/index.html">모달 이벤트</a></li>
+   <li><a href="./practices/11-modal-dialog-animation/index.html">모달 다이얼 로그이벤트</a></li>
+   <li><a href="./practices/12-modal-dialog-animation-gsap/index.html">모달 다이얼 로그 애니메이션</a></li>
+  <li><a href="./practices/13-accordion-animation/index.html">아코디언</a></li>
+  <li><a href="./practices/14-carousel-animation/index.html">아코디언</a></li>
+  <li><a href="./assets/scripts/learn/50-ternary.js">터너리</a></li>
 </ul>
 
 <div class="ball"></div>
 
-    <script src="./assets/scripts/learn/49-web-animations.js"></script>
+    <script src="./assets/scripts/learn/53-template-literal.js"></script>
   </body>
 </html>
