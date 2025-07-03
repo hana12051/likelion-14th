@@ -16,177 +16,97 @@
 
   <body>
     
-    <h1 id="static">JavaScript</h1>
+     <h1 id="static">JavaScript</h1>
     
-     <div class="practice1" style="display: flex; flex-direction: column; gap: 20px;">
-  <form>
-    <div>
-      <label for="username">이름</label>
-      <input id="username" name="username" placeholder="이름을 입력하세요" />
-    </div>
-    <button type="submit">확인</button>
-  </form>
-  <output>결과 출력</output>
-</div>
+    <main hidden>
 
+      <!-- Template Literals -->
+      <div class="practice">
+        <form>
+          <div>
+            <label for="username">이름</label>
+            <input id="username" type="text" placeholder="이름을 입력하세요." />
+          </div>
+          <div>
+            <label for="meal">식사</label>
+            <select id="meal">
+              <option>식사 종류</option>
+              <option value="breakfast">아침</option>
+              <option value="lunch">점심</option>
+              <option value="dinner">저녁</option>
+            </select>
+          </div>
+          <button type="button">인사하기</button>
+        </form>
+        <p>인사말 출력</p>
+      </div>
 
-<div class="practice2" style="display: flex; flex-direction: column; gap: 20px;">
-  <input type="number" aria-label="점수" placeholder="점수를 입력하세요" />
-  <button type="button">등급 확인</button>
-  <output>등급 출력</output>
-</div>
-  
+      <!-- Early Return -->
+      <div class="practice1" style="display: flex; flex-direction: column; gap: 20px;">
+        <form>
+          <div>
+            <label for="username">이름</label>
+            <input id="username" name="username" placeholder="이름을 입력하세요" />
+          </div>
+          <button type="submit">확인</button>
+        </form>
+        <output>결과 출력</output>
+      </div>
 
-    <ul hidden class="faq-list">
-      <li data-index="0"><a href="/faq/shipping">배송 관련 문의</a></li>
-      <li data-index="1"><a href="/faq/payment">결제 방법 안내</a></li>
-      <li data-index="2"><a href="/faq/return">반품 및 환불 정책</a></li>
-      <li data-index="3"><a href="/faq/account">계정 및 개인정보</a></li>
-      <li data-index="4"><a href="/faq/coupon">쿠폰 및 프로모션</a></li>
-    </ul>
+      <div class="practice2" style="display: flex; flex-direction: column; gap: 20px;">
+        <input type="number" aria-label="점수" placeholder="점수를 입력하세요" />
+        <button type="button">등급 확인</button>
+        <output>등급 출력</output>
+      </div>
+      
+      <!-- GSAP -->
+      <div class="ball"></div>
 
-    <article hidden>
-      <h2>스타 워즈</h2>
-      <div id="star-wars">
-        <!-- 1 -->
-        <!-- 2 -->
-        <!-- 3 -->
-        <!-- 4 -->
-        <div class="character" data-type="good-guy">
-          <span>루크</span> <span>스카이워커</span>
-        </div>
-        <div class="character" data-type="good-guy">
-          <b>요</b>
-          <i>다</i>
-        </div>
-        <div class="character" data-type="villain">
-          <span class="parent">
-            <em>
-              <span class="me">다스</span>
-            </em> 
-          </span>
-          <strong>베이더</strong>
+      <!-- Event Delegation -->
+      <div class="box box1">
+        <span>박스 1</span>
+        <div class="box box2">
+          <span>박스 2</span>
+          <div class="box box3">
+            <span>박스 3</span>
+          </div>
         </div>
       </div>
-    </article>
-
-    <section hidden class="life-tips">
-      <h2>생활 상식</h2>
-      <p class="para">배터리를 오래 쓰고 싶다면 100% 충전보다는 80~90%에서 사용을 멈추는 것이 좋습니다.</p>
-      <p class="para">전자레인지에 금속 용기를 넣으면 화재 위험이 있으니 절대 사용하지 마세요.</p>
-      <p class="para">흰 셔츠의 얼룩은 세탁 전에 식초나 베이킹소다로 미리 처리하면 잘 지워집니다.</p>
-    </section>
-
-    <p 
-      hidden
-      id="notice"
-      class="announcement"
-      data-category="event"
-      data-user-id="27" 
-      data-role="manager" 
-      data-status="active"
-      >
-      모든 태그는 여러 개의 속성을 가질 수 있습니다!
-    </p>
-
-    <form hidden>
-      <div>
-        <!-- HTML attribute -->
-        <input type="checkbox" name="hobby" id="hobby" checked />
-        <label for="hobby">취미</label>
-      </div>
-      <button type="submit">제출</button>
-    </form>
-
-    <button hidden type="button" data-name="change-bg-color">배경색 변경</button>
-
-    <a hidden href="https://naver.com" target="_blank" rel="noopener noreferrer">
-      네이버
-    </a>
-
-    <hr />
     
-    <label hidden for="agreement">
-      <input type="checkbox" name="agreement" id="agreement" />
-      동의합니다.
-    </label>
-
-    <hr />
-
-    <form hidden data-learn="form" method="GET" action="https://google.com">
-  <!-- 검색 필드 -->
-  <div hidden>
-    <label hidden for="search-term">검색어</label>
-    <input hidden type="search" name="search-term" id="search-term" placeholder="검색어를 입력" />
-  </div>
-  <button hidden type="submit">검색</button>
-  <button hidden type="reset">초기화</button>
-</form>
-
-<div  hidden class="box box1">
-  <span>박스 1</span>
-  <div class="box box2">
-    <span>박스 2</span>
-    <div class="box box3">
-      <span>박스 3</span>
-    </div>
-  </div>
-</div>
-
-<div hidden role="group" style="display: flex; gap: 4px; margin-block: 12px;">
-  <button type="button" data-role="add-event">이벤트 추가</button>
-  <button type="button" data-role="remove-event">이벤트 제거</button>
-  <button data-role="tester" type="button">이벤트 추가 대기중...</button>
-  <button type="button" data-role="once-event">1회만 이벤트 설정</button>
-</div>
-
-
-<ul hidden class="link-list">
-  <li>
-    <a href="/news">
-      <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        width="24" height="24" 
-        viewBox="0 0 24 24" 
-        fill="none" 
-        stroke="currentColor" 
-        stroke-width="2" 
-        stroke-linecap="round" 
-        stroke-linejoin="round" 
-      >
-        <path d="M15 18h-5"/>
-        <path d="M18 14h-8"/>
-        <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"/>
-        <rect width="8" height="4" x="10" y="6" rx="1"/>
-      </svg>
-      최신 뉴스 보기
-    </a>
-  </li>
-  <li><a href="/tutorials">📘 튜토리얼 모음</a></li>
-  <li><a href="/community">💬 커뮤니티 참여</a></li>
-  <li><a href="/resources">📁 개발 자료실</a></li>
-  <li><a href="/contact">📮 문의하기</a></li>
-</ul>
-
-<div class="practice">
-  <form>
-    <div>
-      <label for="username">이름</label>
-      <input id="username" type="text" placeholder="이름을 입력하세요." />
-    </div>
-    <div>
-      <label for="meal">식사</label>
-      <select id="meal">
-        <option>식사 종류</option>
-        <option value="breakfast">아침</option>
-        <option value="lunch">점심</option>
-        <option value="dinner">저녁</option>
-      </select>
-    </div>
-    <button type="button">인사하기</button>
-  </form>
-  <p>인사말 출력</p>
-</div>
+      <!-- Add/Remove Event Listener -->
+      <div role="group" style="display: flex; gap: 4px; margin-block: 12px;">
+        <button type="button" data-role="add-event">이벤트 추가</button>
+        <button type="button" data-role="remove-event">이벤트 제거</button>
+        <button type="button" data-role="tester">이벤트 추가 대기중...</button>
+        <button type="button" data-role="once-event">1회만 이벤트 설정</button>
+      </div>
+    
+      <!-- Event Loop -->
+      <ul class="link-list">
+        <li>
+          <a href="/news">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24" height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M15 18h-5" />
+              <path d="M18 14h-8" />
+              <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" />
+              <rect width="8" height="4" x="10" y="6" rx="1" />
+            </svg>
+            <span>최신 뉴스 보기</span>
+          </a>
+        </li>
+        <li><a href="/tutorials">📘 튜토리얼 모음</a></li>
+        <li><a href="/community">💬 커뮤니티 참여</a></li>
+        <li><a href="/resources">📁 개발 자료실</a></li>
+        <li><a href="/contact">📮 문의하기</a></li>
+      </ul>
 
 <ul>
   <li><a href="./assets/pages/13-gsap-animation/practice-01.html">연습2</a></li>
@@ -201,6 +121,6 @@
 
 <div class="ball"></div>
 
-    <script src="./assets/scripts/learn/53-template-literal.js"></script>
+    <script src="./assets/scripts/learn/54-destructuring-assignment.js"></script>
   </body>
 </html>
