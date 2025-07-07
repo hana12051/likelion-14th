@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <title>나머지 매개변수 및 전개구문</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  
+  <div id="practice1">
+    <div>
+      <label for="array1">배열1</label>
+      <input id="array1" type="text" placeholder="예) 1,2,3" />
+    </div>
+    <div>
+      <label for="array2">배열2</label>
+      <input id="array2" type="text" placeholder="예) 4,5,6" />
+    </div>
+    <button type="button">병합</button>
+    <output>{병합된 배열}</output>
+  </div>
+
+  <script>
+    {
+      // ------------------------------------------------------------------------------
+      // 배열 전개
+      // ------------------------------------------------------------------------------
+      // 두 개의 입력 필드에 숫자 배열을 쉼표로 입력하고 버튼을 클릭하면 두 배열을 하나로 결합해 출력하세요.
+      // - 두 배열을 전개 연산자로 병합합니다.
+      // - 병합된 배열을 `<output>` 요소 콘텐츠로 출력합니다.
+      
+      const practice1 = document.getElementById('practice1');
+  const input1 = document.getElementById('array1');
+  const input2 = document.getElementById('array2');
+  const button = practice1.querySelector('button');
+  const output = practice1.querySelector('output');
+
+  // 문자열을 숫자 배열로 변환하는 헬퍼 함수
+  const parseInput = (input) =>
+    input
+      .split(',')
+      .map(item => item.trim())
+      .filter(item => item !== '')
+      .map(Number);
+
+  // 버튼 클릭 시 병합 및 출력
+  button.addEventListener('click', () => {
+    const array1 = parseInput(input1.value);
+    const array2 = parseInput(input2.value);
+
+    const mergedArray = [...array1, ...array2]; // 전개 구문 사용
+
+    output.textContent = `[${mergedArray.join(', ')}]`; // 배열 형태로 출력
+  }); 
+     
+
+    }
+  </script>
+</body>
+</html>
