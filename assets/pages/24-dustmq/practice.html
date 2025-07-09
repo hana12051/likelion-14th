@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM 조작 실습</title>
+  <style>
+    section, div {
+      margin-bottom: 3rem;
+    }
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. 할 일 추가 -->
+  <section id="practice1">
+    <h2>📋 오늘의 할 일</h2>
+    <form>
+      <input type="text" aria-label="할 일" placeholder="할 일 작성" />
+      <button type="submit">추가</button>
+    </form>
+    <ul class="todo-list"></ul>
+  </section>
+
+  <!-- 2. 다른 요소 앞에 추가 -->
+  <section id="practice2">
+    <h2>🍜 라면 레시피</h2>
+    <button type="button">"면을 넣고" 앞에 추가</button>
+    <ol class="recipe-list">
+      <li>물을 냄비에 붓고 끓입니다.</li>
+      <li>면을 넣고 3~4분간 끓입니다.</li>
+    </ol>
+  </section>
+
+  <!-- 3. 다른 목록으로 이동 -->
+  <div id="practice3">
+    <button type="button">다른 목록으로 이동</button>
+
+    <h2>🍉 좋아하는 과일</h2>
+    <ol class="fruits-i-like">
+      <li>수박</li>
+      <li>망고</li>
+    </ol>
+    
+    <h2>🍇 안 좋아하는 과일</h2>
+    <ol class="fruits-i-dont-like">
+      <li>포도</li>
+    </ol>
+  </div>
+
+  <script>
+    // -------------------------------
+    // 1. 할 일 추가
+    // -------------------------------
+    const form = document.querySelector('#practice1 form')
+    const input = form.querySelector('input')
+    const todoList = document.querySelector('.todo-list')
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      const value = input.value.trim()
+      if (!value) return
+
+      const li = document.createElement('li')
+      li.textContent = value
+      todoList.appendChild(li)
+      input.value = ''
+      input.focus()
+    })
+
+
+    // -------------------------------
+    // 2. 다른 요소 앞에 추가
+    // -------------------------------
+    const recipeButton = document.querySelector('#practice2 button')
+    const recipeList = document.querySelector('.recipe-list')
+
+    recipeButton.addEventListener('click', () => {
+      const newStep = document.createElement('li')
+      newStep.textContent = '물이 끓으면 스프를 넣습니다.'
+
+      const referenceItem = recipeList.children[1] // "면을 넣고"
+      recipeList.insertBefore(newStep, referenceItem)
+    })
+
+
+    // -------------------------------
+    // 3. 다른 목록으로 이동->연습 더 필요 
+    // -------------------------------
+    const moveButton = document.querySelector('#practice3 button')
+    const likeList = document.querySelector('.fruits-i-like')
+    const dontLikeList = document.querySelector('.fruits-i-dont-like')
+
+    moveButton.addEventListener('click', () => {
+      const mango = Array.from(likeList.children).find(li => li.textContent === '망고')
+      if (mango) {
+        dontLikeList.appendChild(mango)
+      }
+    })
+  </script>
+
+</body>
+</html>
