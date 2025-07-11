@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>조건 분기 실습</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    label,
+    select,
+    input {
+      font-size: 1rem;
+    }
+
+    output {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+      color: darkslateblue;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. 요일 별 메시지 출력 -->
+  <section id="practice1">
+    <h2>📆 요일 별, 메시지 출력</h2>
+    <div>
+      <label for="day">요일 선택</label>
+      <input type="text" id="day" placeholder="예: 월요일" />
+    </div>
+    <button type="button">메시지 출력</button>
+    <output></output>
+  </section>
+
+  <!-- 2. 음식 별 이모지 출력 -->
+  <section id="practice2">
+    <h2>🍽 음식 별, 이모지 출력</h2>
+    <label for="food-select">음식 종류 선택</label>
+    <select id="food-select" aria-label="음식 종류">
+      <option value="">종류 선택</option>
+      <option value="한식">한식</option>
+      <option value="일식">일식</option>
+      <option value="중식">중식</option>
+      <option value="양식">양식</option>
+      <option value="매운거안매운거">매운거안매운거</option>
+    </select>
+    <output></output>
+  </section>
+
+  <!-- 3. 취미 별 카테고리 출력 -->
+  <section id="practice3">
+    <h2>🎯 취미 별, 카테고리 출력</h2>
+    <label for="hobby-select">취미 선택</label>
+    <select id="hobby-select" aria-label="취미">
+      <option value="">취미를 선택하세요</option>
+      <option value="수영">수영</option>
+      <option value="영화 감상">영화 감상</option>
+      <option value="게임">게임</option>
+      <option value="조깅">조깅</option>
+    </select>
+    <output></output>
+  </section>
+
+  <script>
+   const daySection = document.querySelector('#practice1')
+   const dayInput = daySection.querySelector('#day')
+   const dayButton = daySection.querySelector('button')
+   const dayOutput = daySection.querySelector('output')
+
+  dayButton.addEventListener('click', () => {
+   const 입력값 = dayInput.value.trim().replace('요일', '') // "월요일" → "월"
+   let 메시지 = ''
+
+   switch (입력값) {
+    case '월':
+      메시지 = '월요일 👉 새로운 한 주가 시작됩니다!'
+      break
+    case '화':
+      메시지 = '화요일 👉 화이팅! 아직 많이 남았어요!'
+      break
+    case '수':
+      메시지 = '수요일 👉 벌써 주 중반이네요!'
+      break
+    case '목':
+      메시지 = '목요일 👉 조금만 더 힘내요!'
+      break
+    case '금':
+      메시지 = '금요일 👉 주말이 코앞입니다!'
+      break
+    case '토':
+      메시지 = '토요일 👉 즐거운 주말 보내세요!'
+      break
+    case '일':
+      메시지 = '일요일 👉 편안한 휴일 보내세요!'
+      break
+    default:
+      메시지 = '⚠️ 정확한 요일(예: 월요일 또는 월)을 입력해 주세요!'
+     }
+
+     dayOutput.textContent = 메시지
+    })
+
+
+      // 2. 음식 별 이모지 출력
+      const 푸드_카테고리 = {
+        한식: '🍚 순대국밥!',
+        일식: '🍣 초밥!',
+        중식: '🥡 짜장면!',
+        양식: '🍕 피자!',
+        매운거안매운거: '그냥먹어',
+      }
+
+      const foodSelect = document.querySelector('#food-select')
+      const foodOutput = document.querySelector('#practice2 output')
+
+      foodSelect.addEventListener('change', () => {
+        const 선택값 = foodSelect.value
+        foodOutput.textContent = 푸드_카테고리[선택값] || ''
+      })
+
+      // 3. 취미 별 카테고리 출력
+      const 취미_카테고리 = {
+        '🏖 수상 스포츠': ['수영', '스킨스쿠버', '윈드서핑'],
+        '📚 실내 취미': ['영화 감상', '독서'],
+        '🏃‍♂️ 야외 활동': ['조깅', '등산'],
+      }
+
+      const hobbySelect = document.querySelector('#hobby-select')
+      const hobbyOutput = document.querySelector('#practice3 output')
+
+      hobbySelect.addEventListener('change', () => {
+        const 선택값 = hobbySelect.value
+        let 결과 = '❓ 해당 카테고리를 찾을 수 없습니다.'
+
+        for (const [카테고리, 목록] of Object.entries(취미_카테고리)) {
+          if (목록.includes(선택값)) {
+            결과 = `${카테고리}에 속합니다.`
+            break
+          }
+        }
+
+        hobbyOutput.textContent = 선택값 ? `${선택값} 👉 ${결과}` : ''
+      })
+  </script>
+
+</body>
+</html>

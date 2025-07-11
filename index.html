@@ -9,31 +9,150 @@
     <link rel="icon" href="./assets/images/ecmascript-logo.png" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <script src="https://cdn.jsdelivr.net/npm/gsap/dist/gsap.min.js"></script>
-    <script src="./assets/scripts/learn/68-add-elements-to-dom.js" defer></script>
+    <script src="./assets/scripts/learn/76-json.js" defer></script>
   </head>
 
   <body>
     
     <h1>JavaScript</h1>
 
-     <ul>
-       <li><a href="./assets/pages/23-dustmq/index.html">페이지 연습</a></li> 
-       <li><a href="./assets/pages/18-useful-array-methods/practice.html">실습 페이지</a></li>
+       <ul>
+       <li><a href="./assets/pages/33-dustmq/index.html">페이지 연습</a></li> 
+       <li><a href="./assets/pages/32-unique-id/practice.html">실습 페이지</a></li>
     </ul>
+     
+  <h2>GitHub 팔로워</h2>
+<ul class="github-followers">
+  <li>데이터를 로딩 중입니다...</li>
+</ul>
+ 
 
-    <article>
-  <h2>라면 끓이는 방법</h2>
-  <ol class="ramen-cooking-recipe">
-    <li>물을 냄비에 붓고 끓입니다 (약 500ml).</li>
-    <li>물이 끓으면 스프를 먼저 넣습니다.</li>
-    <li>면을 넣고 3~4분간 끓입니다.</li>
-    <li>취향에 따라 파, 계란, 치즈 등을 추가합니다.</li>
-    <li>면이 익으면 불을 끄고 그릇에 옮깁니다.</li>
-  </ol>
-</article>
-    
-    
     <main hidden>
+
+        <form>
+  <label for="text">텍스트</label>
+  <input type="text" id="text" name="text" />
+  <button type="submit">출력</button>
+</form>
+
+<output></output>
+
+<script>
+  ;(() => {
+    
+    // DOM에 요소 추가에 insertBefore()을 다시 설명해주세요!
+    // 대상요소.부모요소.insertBefore(삽입요소, 대상요소)
+    // 대상요소 / 삽입요소
+
+    const 대상요소 = document.querySelector('h1')
+    
+    const 삽입요소 = document.createElement('section')
+    삽입요소.classList.add('sectioning-content')
+    삽입요소.textContent = 'SECTION'
+    
+    const 대상요소_부모요소 = 대상요소.parentElement
+    대상요소_부모요소.insertBefore(삽입요소, 대상요소)
+
+  })()
+</script>
+
+      <form action="/subscribe" method="POST">
+        <div>
+          <label for="email">이메일</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="user@example.com"
+            required 
+          />
+        </div>
+        <button type="submit">구독</button>
+      </form>
+
+      <script>
+        const form = document.querySelector('form')
+        form.addEventListener('submit', (e) => {
+          e.preventDefault()
+          
+          console.log('submitting')
+
+          // form.submit()
+
+          // 서버와 데이터 통신
+          // 비동기(AJAX) 방식으로 처리
+          // XMLHttpRequest 객체 사용
+          // Promise 객체 사용
+        })
+      </script>
+
+      <section>
+        <h2>실습</h2>
+      </section>
+
+      <!-- beforebegin : before() -->
+      <h1 style="display: flex">
+        <!-- afterbegin : prepend() -->
+        JavaScript
+        <!-- beforeend : append() -->
+      </h1>
+      <!-- afterend : after() -->
+    
+      <article>
+        <h2>라면 끓이는 방법</h2>
+        <ol class="ramen-cooking-recipe">
+          <li>기준선</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>라면 끓이는 방법</h2>
+        <!-- before -->
+        <ol class="ramen-cooking-recipe">
+          <!-- prepend -->
+          <li>면이 익으면 불을 끄고 그릇에 옮깁니다.</li>
+          <li>물을 냄비에 붓고 끓입니다 (약 500ml).</li>
+          <li>물이 끓으면 스프를 먼저 넣습니다.</li>
+          <li>취향에 따라 파, 계란, 치즈 등을 추가합니다.</li>
+          <li>호호 불며 맛있게 먹습니다.</li>
+          <!-- append -->
+        </ol>
+        <!-- after -->
+      </article>
+
+      <button type="button">위치 변경</button>
+      <div style="display: flex; justify-content: space-between; gap: 20px;">
+        <ol class="fruits-i-like">
+          <li>바나나</li>
+          <li>파인애플</li>
+          <li>오렌지</li>
+        </ol>
+        <ol class="fruits-i-dont-like">
+          <li>스트로베리</li>
+        </ol>
+      </div>
+
+      
+
+      <div class="parent" style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <span>자식 1</span>
+        <span>자식 2</span>
+      </div>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="">하나</a>
+          </li>
+          <li>
+            <a href="">둘</a>
+          </li>
+          <li>
+            <a href="">셋</a>
+          </li>
+        </ul>
+      </nav>
+
       <ul id="fruitList"></ul>
       <p style="margin-block: 0; font-size: 2rem">JavaScript is Awesome!</p>
 

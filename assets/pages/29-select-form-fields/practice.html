@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <title>JavaScript로 폼 필드 선택</title>
+    <style>
+      [id^="practice"] {
+        display: flex;
+        flex-flow: column;
+        align-items: start;
+        gap: 12px;
+        padding: 12px;
+
+        * {
+          margin-block: 0;
+        }
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      hr {
+        margin-block: 20px;
+        margin-inline: 12px;
+        border: 0;
+        border-block-end: 1px solid #aaa;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <section id="practice1">
+      <form id="login-form">
+        <div class="form-field">
+          <label for="user-id">아이디</label>
+          <input type="text" name="userid" id="user-id" />
+        </div>
+        <div class="form-field">
+          <label for="user-pw">비밀번호</label>
+          <input type="password" name="password" id="user-pw" />
+        </div>
+        <button type="submit">로그인</button>
+      </form>
+    </section>
+
+    <script>
+      // 실습 1. 로그인 폼
+      // 로그인 폼에 사용자가 입력한 아이디, 비밀번호 값을 읽어와 콘솔 패널에 출력합니다. 
+      // form.elements 활용
+      ;(() => {
+        
+
+
+      })()
+    </script>
+
+    <hr />
+
+    <section id="practice2">
+      <form id="feedback-form">
+        <div class="form-field">
+          <label for="user-email">이메일</label>
+          <input type="email" name="email" id="user-email" />
+        </div>
+        <div class="form-field">
+          <label for="feedback">피드백</label>
+          <textarea name="feedback" id="feedback"></textarea>
+        </div>
+        <button type="submit">보내기</button>
+      </form>
+    </section>
+
+    <script>
+      // 실습 2. 피드백 폼
+      // 보내기 버튼을 누르면 사용자가 입력한 이메일, 
+      // 피드백 내용을 읽어와 화면에 얼럿(alert) 창을 띄웁니다.
+      ; (() => {
+        
+
+
+      })()
+    </script>
+
+    <hr />
+
+    <section id="practice3">
+      <form id="radio-check-form">
+        <p>관심있는 프로그래밍 언어는?</p>
+        <label><input type="radio" name="lang" value="JavaScript" /> JavaScript</label>
+        <label><input type="radio" name="lang" value="Python" /> Python</label>
+        <label><input type="radio" name="lang" value="Java" /> Java</label>
+        <button type="submit">선택 완료</button>
+      </form>
+    </section>
+
+  <script>
+  // ✅ 실습 1. 로그인 폼
+  // form.elements 활용하여 입력값 출력
+  (() => {
+    const form = document.getElementById('login-form')
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+      const { userid, password } = form.elements
+      console.log('아이디:', userid.value)
+      console.log('비밀번호:', password.value)
+    })
+  })()
+</script>
+
+<script>
+  // ✅ 실습 2. 피드백 폼
+  // alert 창에 이메일과 피드백 내용 출력
+  (() => {
+    const form = document.getElementById('feedback-form')
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+      const email = form.elements.email.value.trim()
+      const feedback = form.elements.feedback.value.trim()
+
+      alert(`📩 ${email} 님의 피드백:\n"${feedback}"`)
+    })
+  })()
+</script>
+
+<script>
+  // ✅ 실습 3. 라디오 체크 폼
+  // 선택된 프로그래밍 언어를 콘솔에 출력
+  (() => {
+    const form = document.getElementById('radio-check-form')
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+      const selectedLang = form.elements.lang.value
+      console.log('선택한 언어:', selectedLang)
+    })
+  })()
+</script>
+
+
+  </body>
+
+</html>
