@@ -9,7 +9,8 @@
     <link rel="icon" href="./assets/images/ecmascript-logo.png" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <script src="https://cdn.jsdelivr.net/npm/gsap/dist/gsap.min.js"></script>
-    <script src="./assets/scripts/learn/76-json.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./assets/scripts/learn/87-async-js-request.js" defer></script>
   </head>
 
   <body>
@@ -17,17 +18,34 @@
     <h1>JavaScript</h1>
 
        <ul>
-       <li><a href="./assets/pages/33-dustmq/index.html">페이지 연습</a></li> 
-       <li><a href="./assets/pages/32-unique-id/practice.html">실습 페이지</a></li>
+       <li><a href="./assets/pages/32-to-do-list/index.html">페이지 연습</a></li> 
+       <li><a href="./assets/pages/120-dustmq/indx.html">실습 페이지</a></li>
+       <li><a href="./assets/pages/32-to-do-list/login/index.html">투두리스트 로그인페이지</a></li>
     </ul>
      
-  <h2>GitHub 팔로워</h2>
-<ul class="github-followers">
-  <li>데이터를 로딩 중입니다...</li>
-</ul>
- 
+    <div role="alert" hidden style="color: red;"></div>
+
+    <form method='POST' action="http//localhost:4000/submit"></form>
+  
+       <form id="upload-form">
+  <div>
+    <label for="image">이미지</label>
+    <input type="file" name="image" id="image" accept="image/*" multiple />
+  </div>
+  <div>
+    <button type="submit">업로드</button>
+  </div>
+</form>
+    
 
     <main hidden>
+
+        <h2>GitHub 팔로워</h2>
+<ul class="repos-list">
+  <li>데이터를 로딩 중입니다...</li>
+  <li><a href="link-to-repo-1-url">저장소 이름 (# 공개 여부)</a></li>
+  <li><a href="link-to-repo-2-url">저장소 이름 (# 공개 여부)</a></li>
+</ul>
 
         <form>
   <label for="text">텍스트</label>
@@ -279,6 +297,7 @@
         <li><a href="/contact">📮 문의하기</a></li>
       </ul>
 
+    
     </main>
   </body>
 

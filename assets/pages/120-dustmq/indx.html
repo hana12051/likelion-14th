@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <title>GitHub 인증 실습</title>
+</head>
+<body>
+  <h1>📦 내 GitHub 저장소 목록 보기</h1>
+  <form>
+      <label for="github-personal-access-token">GitHub 개인 엑세스 토큰</label>
+      <input
+          type="text" 
+          id="github-personal-access-token" 
+          placeholder="토큰 입력하세요"
+            size="60"
+        />
+      <button type="submit">저장소 목록 가져오기</button>
+  </form>
+  <ul data-id="repoList"></ul>
+
+<script>
+  // 여기에 코드를 작성합니다.
+  {
+    const COUNT_PER_PAGE = 3
+    const GITHUB_ENDPOINT = 'https://api.github.com/user/repos'
+    const repoList = document.querySelector('[data-id="repoList"]')
+    const form = document.querySelector('form')
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+      const form = e.currentTarget
+      const [tokenInput] = form.elements
+      const token = tokenInput.value.trim()
+
+      fetchGitHubUserRepos(token)
+        .then(renderRepos)
+        .catch(renderError)
+
+      form.reset()
+    })
+
+    function fetchGitHubUserRepos(token) {
+      console.log(token)
+
+      return fetch(`${GITHUB_ENDPOINT}?per_page=${COUNT_PER_PAGE}`, {
+        method: 'GET',
+        headers: { 'Authorization': `Bearer ${token}` }
+      })
+        // 오류 처리 (직접)
+        .then((response) => 
+          response.json()
+            .then((data) => {
+              // 이행된 경우
+              if (response.ok) return data
+              // 거절된 경우
+              // 1. return Promise.reject(new Error('error message'))
+              return Promise.reject(new Error(data.message))
+              // 2. throw new Error('error message')
+            })
+        )
+    }
+
+    // DOM 업데이트
+    // 이행된 경우
+    function renderRepos(data) {
+      // 리스트 렌더링
+      console.log('render repos')
+    }
+    // 거절된 경우
+    function renderError(error) {
+      // 사용자에게 오류 메시지 렌더링 (안내)
+      console.log('render error')
+    }
+
+  }
+</script>
+</body>
+</html>
