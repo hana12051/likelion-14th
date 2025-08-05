@@ -1,0 +1,33 @@
+{
+	"compilerOptions": {
+		// 어떤 모듈 코드를 생성할지 지정합니다. 
+		// NodeNext는 최신 Node.js에 권장됩니다. 
+		// 이 옵션을 사용하면 "moduleResolution": "nodenext"도 자동으로 추론됩니다.
+		"module": "nodenext", 
+		// 기본값(ES5)을 오버라이드하여 최신 JS 기능을 네이티브로 사용할 수 있게 하고, 
+		// 불필요하게 오래된 JS로 트랜스파일하지 않도록 합니다.
+		"target": "ES2024", 
+		// 모듈 감지를 강제로 활성화합니다. 
+		// 일부 코드에서 아무것도 내보내지 않을 경우, 전역 스크립트로 처리되는 문제를 방지합니다.
+		"moduleDetection": "force", 
+		// 어떤 내장 타입을 포함할지 지정합니다. 
+		// 뒤의 두 가지는 브라우저에서 window, document 같은 전역 객체를 인식하는 데 필요합니다.
+		"lib": ["ES2024", "DOM", "DOM.Iterable"], 
+		// 모든 엄격한 타입 체크 옵션을 활성화합니다.
+		"strict": true,
+		// 일부 코드에서는 모든 값을 사용하지 않으므로 비활성화합니다. 
+		// 실제 앱에서는 true로 설정하세요.
+		"noUnusedLocals": false, 
+		// 함수 매개변수가 읽히지 않을 때 오류를 발생시킵니다. 
+		// 미완성 연습 문제에서 오류가 발생하지 않도록 비활성화합니다.
+		"noUnusedParameters": false, 
+		// 클래스 프로퍼티가 반드시 초기화되도록 보장합니다. 
+		// 클래스 모듈에서 이 옵션을 전환할 수 있습니다.
+		"strictPropertyInitialization": true,
+		// 실제 앱에서는 true로 설정하세요. 
+		// 하지만 일부 코드에서는 예제를 위해 any 타입을 의도적으로 사용하므로 강제하지 않습니다.
+		"noImplicitAny": false, 
+		// 컴파일된 JS 파일을 이 디렉터리에 저장합니다.
+		"outDir": "dist",
+	}
+}

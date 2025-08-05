@@ -1,0 +1,1 @@
+var conflictName = '이름 충돌 문제'

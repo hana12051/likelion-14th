@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
-
   <head>
     <meta charset="UTF-8" />
     <title>JavaScript 펀더멘탈</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://unpkg.com/pretendard/dist/web/static/pretendard.css" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/pretendard/dist/web/static/pretendard.css"
+      crossorigin
+    />
     <link rel="icon" href="./assets/images/ecmascript-logo.png" />
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <script src="https://cdn.jsdelivr.net/npm/gsap/dist/gsap.min.js"></script>
@@ -14,65 +17,64 @@
   </head>
 
   <body>
-    
     <h1>JavaScript</h1>
 
-       <ul>
-       <li><a href="./assets/pages/32-to-do-list/index.html">페이지 연습</a></li> 
-       <li><a href="./assets/pages/120-dustmq/indx.html">실습 페이지</a></li>
-       <li><a href="./assets/pages/32-to-do-list/login/index.html">투두리스트 로그인페이지</a></li>
+    <ul>
+      <li><a href="./assets/pages/32-to-do-list/index.html">페이지 연습</a></li>
+      <li><a href="./assets/pages/120-dustmq/indx.html">실습 페이지</a></li>
+      <li>
+        <a href="./assets/pages/32-to-do-list/login/index.html"
+          >투두리스트 로그인페이지</a
+        >
+      </li>
     </ul>
-     
-    <div role="alert" hidden style="color: red;"></div>
 
-    <form method='POST' action="http//localhost:4000/submit"></form>
-  
-       <form id="upload-form">
-  <div>
-    <label for="image">이미지</label>
-    <input type="file" name="image" id="image" accept="image/*" multiple />
-  </div>
-  <div>
-    <button type="submit">업로드</button>
-  </div>
-</form>
-    
+    <div role="alert" hidden style="color: red"></div>
+
+    <form method="POST" action="http//localhost:4000/submit"></form>
+
+    <form id="upload-form">
+      <div>
+        <label for="image">이미지</label>
+        <input type="file" name="image" id="image" accept="image/*" multiple />
+      </div>
+      <div>
+        <button type="submit">업로드</button>
+      </div>
+    </form>
 
     <main hidden>
+      <h2>GitHub 팔로워</h2>
+      <ul class="repos-list">
+        <li>데이터를 로딩 중입니다...</li>
+        <li><a href="link-to-repo-1-url">저장소 이름 (# 공개 여부)</a></li>
+        <li><a href="link-to-repo-2-url">저장소 이름 (# 공개 여부)</a></li>
+      </ul>
 
-        <h2>GitHub 팔로워</h2>
-<ul class="repos-list">
-  <li>데이터를 로딩 중입니다...</li>
-  <li><a href="link-to-repo-1-url">저장소 이름 (# 공개 여부)</a></li>
-  <li><a href="link-to-repo-2-url">저장소 이름 (# 공개 여부)</a></li>
-</ul>
+      <form>
+        <label for="text">텍스트</label>
+        <input type="text" id="text" name="text" />
+        <button type="submit">출력</button>
+      </form>
 
-        <form>
-  <label for="text">텍스트</label>
-  <input type="text" id="text" name="text" />
-  <button type="submit">출력</button>
-</form>
+      <output></output>
 
-<output></output>
+      <script>
+        (() => {
+          // DOM에 요소 추가에 insertBefore()을 다시 설명해주세요!
+          // 대상요소.부모요소.insertBefore(삽입요소, 대상요소)
+          // 대상요소 / 삽입요소
 
-<script>
-  ;(() => {
-    
-    // DOM에 요소 추가에 insertBefore()을 다시 설명해주세요!
-    // 대상요소.부모요소.insertBefore(삽입요소, 대상요소)
-    // 대상요소 / 삽입요소
+          const 대상요소 = document.querySelector("h1");
 
-    const 대상요소 = document.querySelector('h1')
-    
-    const 삽입요소 = document.createElement('section')
-    삽입요소.classList.add('sectioning-content')
-    삽입요소.textContent = 'SECTION'
-    
-    const 대상요소_부모요소 = 대상요소.parentElement
-    대상요소_부모요소.insertBefore(삽입요소, 대상요소)
+          const 삽입요소 = document.createElement("section");
+          삽입요소.classList.add("sectioning-content");
+          삽입요소.textContent = "SECTION";
 
-  })()
-</script>
+          const 대상요소_부모요소 = 대상요소.parentElement;
+          대상요소_부모요소.insertBefore(삽입요소, 대상요소);
+        })();
+      </script>
 
       <form action="/subscribe" method="POST">
         <div>
@@ -82,18 +84,18 @@
             name="email"
             id="email"
             placeholder="user@example.com"
-            required 
+            required
           />
         </div>
         <button type="submit">구독</button>
       </form>
 
       <script>
-        const form = document.querySelector('form')
-        form.addEventListener('submit', (e) => {
-          e.preventDefault()
-          
-          console.log('submitting')
+        const form = document.querySelector("form");
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          console.log("submitting");
 
           // form.submit()
 
@@ -101,7 +103,7 @@
           // 비동기(AJAX) 방식으로 처리
           // XMLHttpRequest 객체 사용
           // Promise 객체 사용
-        })
+        });
       </script>
 
       <section>
@@ -115,7 +117,7 @@
         <!-- beforeend : append() -->
       </h1>
       <!-- afterend : after() -->
-    
+
       <article>
         <h2>라면 끓이는 방법</h2>
         <ol class="ramen-cooking-recipe">
@@ -139,7 +141,7 @@
       </article>
 
       <button type="button">위치 변경</button>
-      <div style="display: flex; justify-content: space-between; gap: 20px;">
+      <div style="display: flex; justify-content: space-between; gap: 20px">
         <ol class="fruits-i-like">
           <li>바나나</li>
           <li>파인애플</li>
@@ -150,9 +152,10 @@
         </ol>
       </div>
 
-      
-
-      <div class="parent" style="display: flex; flex-direction: column; gap: 0.5rem;">
+      <div
+        class="parent"
+        style="display: flex; flex-direction: column; gap: 0.5rem"
+      >
         <span>자식 1</span>
         <span>자식 2</span>
       </div>
@@ -175,10 +178,10 @@
       <p style="margin-block: 0; font-size: 2rem">JavaScript is Awesome!</p>
 
       <h1 id="static">
-        <a 
+        <a
           href="https://developer.mozilla.org/ko/docs/Web/JavaScript"
           rel="noopener noreferrer"
-          target="_blank" 
+          target="_blank"
           lang="en"
         >
           JavaScript
@@ -196,7 +199,11 @@
         <button type="button">button in header 2</button>
       </header>
 
-      <div id="contoller" role="group" style="display: flex; gap: 4px; margin-block: 12px;">
+      <div
+        id="contoller"
+        role="group"
+        style="display: flex; gap: 4px; margin-block: 12px"
+      >
         <button type="button" data-role="add-event">이벤트 추가</button>
         <button type="button" data-role="remove-event">이벤트 제거</button>
         <button type="button" data-role="tester">이벤트 추가 대기중...</button>
@@ -225,29 +232,54 @@
       </div>
 
       <!-- Early Return -->
-      <div class="practice1" style="display: flex; flex-direction: column; gap: 20px;">
+      <div
+        class="practice1"
+        style="display: flex; flex-direction: column; gap: 20px"
+      >
         <form>
           <div>
             <label for="username">이름</label>
-            <input id="username" name="username" placeholder="이름을 입력하세요" />
+            <input
+              id="username"
+              name="username"
+              placeholder="이름을 입력하세요"
+            />
           </div>
           <button type="submit">확인</button>
         </form>
         <output>결과 출력</output>
       </div>
 
-      <div class="practice2" style="display: flex; flex-direction: column; gap: 20px;">
-        <input type="number" min="0" max="100" value="50" step="5" aria-label="점수" placeholder="점수를 입력하세요" />
+      <div
+        class="practice2"
+        style="display: flex; flex-direction: column; gap: 20px"
+      >
+        <input
+          type="number"
+          min="0"
+          max="100"
+          value="50"
+          step="5"
+          aria-label="점수"
+          placeholder="점수를 입력하세요"
+        />
         <button type="button">등급 확인</button>
         <output>등급 출력</output>
       </div>
 
-      <div class="practice2" style="display: flex; flex-direction: column; gap: 20px;">
-        <input type="number" aria-label="점수" placeholder="점수를 입력하세요" />
+      <div
+        class="practice2"
+        style="display: flex; flex-direction: column; gap: 20px"
+      >
+        <input
+          type="number"
+          aria-label="점수"
+          placeholder="점수를 입력하세요"
+        />
         <button type="button">등급 확인</button>
         <output>등급 출력</output>
       </div>
-      
+
       <!-- GSAP -->
       <div class="ball"></div>
 
@@ -261,31 +293,35 @@
           </div>
         </div>
       </div>
-    
+
       <!-- Add/Remove Event Listener -->
-      <div role="group" style="display: flex; gap: 4px; margin-block: 12px;">
+      <div role="group" style="display: flex; gap: 4px; margin-block: 12px">
         <button type="button" data-role="add-event">이벤트 추가</button>
         <button type="button" data-role="remove-event">이벤트 제거</button>
         <button type="button" data-role="tester">이벤트 추가 대기중...</button>
         <button type="button" data-role="once-event">1회만 이벤트 설정</button>
       </div>
-    
+
       <!-- Event Loop -->
       <ul class="link-list">
         <li>
           <a href="/news">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24" height="24"
+              width="24"
+              height="24"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               stroke-width="2"
               stroke-linecap="round"
-              stroke-linejoin="round">
+              stroke-linejoin="round"
+            >
               <path d="M15 18h-5" />
               <path d="M18 14h-8" />
-              <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" />
+              <path
+                d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"
+              />
               <rect width="8" height="4" x="10" y="6" rx="1" />
             </svg>
             <span>최신 뉴스 보기</span>
@@ -296,9 +332,6 @@
         <li><a href="/resources">📁 개발 자료실</a></li>
         <li><a href="/contact">📮 문의하기</a></li>
       </ul>
-
-    
     </main>
   </body>
-
 </html>

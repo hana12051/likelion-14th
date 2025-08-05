@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "name": "euid-typescript-starter",
+  "version": "1.0.0",
+  "description": "TypeScript 학습을 위한 스타터 프로젝트로 타입 시스템, 인터페이스, 제네릭, 유틸리티 타입 등 TypeScript의 핵심 개념을 실습할 수 있는 환경을 제공합니다.",
+  "license": "MIT",
+  "author": {
+    "email": "yamoo9@naver.com",
+    "name": "yamoo9"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "@tsconfig/bun": "^1.0.7",
+    "@types/jquery": "^3.5.32",
+    "@types/node": "^22.12.0",
+    "eslint": "^9.31.0",
+    "globals": "^16.3.0",
+    "ts-node": "^10.9.2",
+    "typescript-eslint": "^8.37.0",
+    "date-fns": "^4.1.0",
+    "pluralize": "^8.0.0",
+    "ts-brand": "^0.2.0",
+    "type-testing": "^0.2.0",
+    "typescript": "^5.8.2"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    // `false`로 설정하면 모든 TypeScript 문법 사용을 허용합니다. 
+    // `false`로 설정 시 `enum`, `decorator`와 같이 TypeScript에서만 사용 가능한 문법 사용이 가능합니다.
+    "erasableSyntaxOnly": false 
+  }
+}
