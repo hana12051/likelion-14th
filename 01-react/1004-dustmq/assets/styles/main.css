@@ -1,0 +1,114 @@
+:root {
+  --bg: #0f172a;
+  --fg: #e2e8f0;
+  --muted: #94a3b8;
+  --card: #111827;
+  --card-border: #1f2937;
+  --primary: #60a5fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: 'Spoqa Han Sans Neo', system-ui, -apple-system, Segoe UI, Roboto,
+    sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+#container {
+  padding: 40px 20px;
+  max-inline-size: 1100px;
+  margin: 0 auto;
+}
+
+.app header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-block-end: 20px;
+}
+
+.app h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  grid-template-areas:
+    'avatar name'
+    'avatar job'
+    'desc desc'
+    'actions actions';
+  gap: 10px 12px;
+}
+
+.avatar {
+  grid-area: avatar;
+  inline-size: 64px;
+  block-size: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #0b1220;
+  border: 1px solid var(--card-border);
+}
+
+.name {
+  grid-area: name;
+  font-weight: 600;
+}
+
+.job {
+  grid-area: job;
+  color: var(--muted);
+  font-size: 0.925rem;
+}
+
+.desc {
+  grid-area: desc;
+  color: var(--fg);
+  opacity: 0.9;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.actions {
+  grid-area: actions;
+  display: flex;
+  gap: 8px;
+  margin-block-start: 6px;
+}
+
+.button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  background: transparent;
+  color: var(--fg);
+  cursor: pointer;
+}
+
+.button.primary {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.button:hover {
+  filter: brightness(1.15);
+}

@@ -1,0 +1,19 @@
+@layer base, components, utilities;
+
+@import "./common/_normalize.css" layer(base);
+@import "./common/_base.css" layer(base);
+@import "./common/_a11y.css" layer(utilities);
+@import "./common/_animation.css" layer(utilities);
+
+.faq { max-inline-size: 36rem; margin-inline: auto; }
+.faq__title { font-size: 1.25rem; font-weight: 700; margin: 1rem 0; }
+.faq__list { display: grid; gap: .5rem; list-style: none; padding: 0; }
+.faq__button {
+  inline-size: 100%; text-align: start; padding: .875rem 1rem;
+  border-radius: .75rem; border: 1px solid var(--light-gray, #e8eef6);
+  background: var(--card, #f1f6ff); font-weight: 600; display: flex; justify-content: space-between; align-items: center;
+}
+.faq__button:focus-visible { outline: 2px solid #6aa6ff; outline-offset: 2px; }
+.faq__panel { padding: .75rem 1rem; color: #334155; }
+.faq__item.is-open .faq__chevron { transform: rotate(180deg); }
+.faq__chevron { transition: transform .2s ease; }
